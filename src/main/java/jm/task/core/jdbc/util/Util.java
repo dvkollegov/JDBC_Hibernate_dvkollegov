@@ -11,7 +11,7 @@ public class Util {
     private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
     private static Connection connection;
 
-    static {
+    public static Connection getConnection() {
         try {
             Class.forName(DB_DRIVER);
         } catch (ClassNotFoundException e) {
@@ -22,9 +22,6 @@ public class Util {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public static Connection getConnection() {
         return connection;
     }
 }
